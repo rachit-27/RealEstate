@@ -11,23 +11,25 @@ import messageRoute from "./routes/message.route.js";
 
 configDotenv();
 
-const app=express();
+const app = express();
 
 app.use(cors({
-    origin:"https://real-estate-two-blue.vercel.app",
-    credentials:true
+    origin: 'https://real-estate-two-blue.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 
 
-app.use("/api/auth",authRoute);
-app.use("/api/users",userRoute);
-app.use("/api/posts",postRoute);
-app.use("/api/test",testRoute);
-app.use("/api/chats",chatRoute);
-app.use("/api/messages",messageRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/test", testRoute);
+app.use("/api/chats", chatRoute);
+app.use("/api/messages", messageRoute);
 
-app.listen(8800, ()=>{
+app.listen(8800, () => {
     console.log("Server is running!");
 });
