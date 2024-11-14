@@ -14,7 +14,8 @@ configDotenv();
 const app=express();
 
 app.use(cors({
-    origin:"https://real-estate-two-blue.vercel.app"
+    origin:"https://real-estate-two-blue.vercel.app",
+    credentials:true
 }));
 app.use(express.json());
 app.use(cookieParser());
