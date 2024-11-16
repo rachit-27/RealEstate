@@ -20,5 +20,4 @@ function Pin({ item }) {
 }
 
 
-
 export default Pin;
