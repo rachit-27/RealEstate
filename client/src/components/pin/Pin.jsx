@@ -3,6 +3,7 @@ import "./pin.scss";
 import { Link } from "react-router-dom";
 
 function Pin({ item }) {
+  console.log(item.images[0]);
   return (
     <Marker position={[item.latitude, item.longitude]}>
       <Popup>
