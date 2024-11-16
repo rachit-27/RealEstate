@@ -28,18 +28,6 @@ function SinglePage() {
     }
   };
 
-    // Navigate to ProfilePage and pass the post user's id to open the chat
-    const handleOpenChat = async () => {
-      if (!currentUser) {
-        navigate("/login");
-        return;
-      }
-  
-      // You can pass the post.user.id to the ProfilePage via the state
-      navigate("/profile", {
-        state: { activeChatUserId: post.user.id },
-      });
-    };
 
   return (
     <div className="singlePage">
@@ -145,7 +133,7 @@ function SinglePage() {
             <Map items={[post]} />
           </div>
           <div className="buttons">
-            <button onClick={handleOpenChat}>
+            <button>
               <img src="/chat.png" alt="" />
               Send a Message
             </button>
