@@ -18,7 +18,7 @@ function Pin({ item }) {
     </Marker>
   );
 }
-console.log(item.images[0]);
+
 
 
 export default Pin;
