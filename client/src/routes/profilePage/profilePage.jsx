@@ -13,6 +13,8 @@ function ProfilePage() {
 
   const navigate = useNavigate();
 
+  const [activeChat, setActiveChat] = useState(null);
+
   const handleLogout = async () => {
     try {
       await apiRequest.post("/auth/logout");
@@ -22,6 +24,17 @@ function ProfilePage() {
       console.log(err);
     }
   };
+
+    // If there's a state passed from SinglePage, open the chat
+    useEffect(() => {
+      if (location.state?.activeChatUserId) {
+        const userId = location.state.activeChatUserId;
+        apiRequest.get(`/chats/open/${userId}`).then((res) => {
+          setActiveChat(res.data);
+        }).catch(err => console.log(err));
+      }
+    }, [location]);
+    
   return (
     <div className="profilePage">
       <div className="details">
