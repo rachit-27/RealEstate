@@ -8,7 +8,6 @@ function Pin({ item }) {
       <Popup>
         <div className="popupContainer">
           <img src={item.images[0]} alt="" />
-          console.log(item.images[0]);
           <div className="textContainer">
             <Link to={`/${item.id}`}>{item.title}</Link>
             <span>{item.bedroom} bedroom</span>
@@ -19,5 +18,7 @@ function Pin({ item }) {
     </Marker>
   );
 }
+console.log(item.images[0]);
+
 
 export default Pin;
